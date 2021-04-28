@@ -1,0 +1,68 @@
+#top
+{
+  text-align: center;
+  background-color: white;
+  font-size: 40px;
+}
+
+#search_text
+{
+
+  background-color: white;
+  font-size: 25px;
+
+}
+
+#search
+{
+  font-size: 30px;
+}
+
+#search_button
+{
+  height: 40px;
+  width: 200px;
+  font-size: 25px;
+}
+
+#week
+{
+    height: 45px;
+    width: 150px;
+    font-size: 25px;
+}
+
+#month
+{
+  height: 45px;
+  width: 150px;
+  font-size: 25px;
+}
+
+#year
+{
+    height: 45px;
+    width: 150px;
+    font-size: 25px;
+}
+
+#years
+{
+  height: 45px;
+  width: 150px;
+  font-size: 25px;
+}
+
+#company
+{
+
+font-size: 30px;
+
+}
+
+#plot
+{
+
+  border: transparent;
+
+}
