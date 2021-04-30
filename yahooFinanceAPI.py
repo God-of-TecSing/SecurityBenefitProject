@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import yfinance as yf
 import matplotlib.pyplot as plt
@@ -21,7 +22,7 @@ def getTimeSpan():
 
 def getBeginningDate(timespan):
     if timespan == 1:
-        beginning = (date.today()-timedelta(days = 7)).isoformat()
+        beginning = (date.today()-timedelta(days = 9)).isoformat()
     elif timespan == 2:
         beginning = (date.today()-timedelta(days = 30)).isoformat()
     elif timespan == 3:
@@ -65,10 +66,15 @@ def get_post_javascript_data():
         data = request.get_json()
         ticker = data['Company']
         timespan = data['Time']
+        delete = data['Delete']
         print (ticker)
         print (timespan)
-    return getPlot(ticker, timespan)
-
+        print (delete)
+        if not delete:
+            return getPlot(ticker, timespan)
+        elif delete:
+            os.remove("images/" + getplotname(ticker, timespan))
+            return "Deleted " + getplotname(ticker, timespan)
 @bp.route('/js/<path:path>')
 def send_js(path):
     return send_from_directory('js', path)
